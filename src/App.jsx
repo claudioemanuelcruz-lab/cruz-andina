@@ -183,12 +183,12 @@ export default function App() {
           text-transform: uppercase;
         }
 
-        .box {
-          background: rgba(0,0,0,0.48);
-          padding: 38px;
-          border-radius: 28px;
-          border: 1px solid rgba(255,255,255,0.16);
-          backdrop-filter: blur(8px);
+        .box { 
+          background: transparent;
+          padding: 20px;
+          border-radius: 0;
+          border: none;
+         backdrop-filter: none;
         }
 
         .history-layout {
@@ -226,24 +226,18 @@ export default function App() {
           grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
           gap: 25px;
         }
-
         .card {
-          background: rgba(0,0,0,0.55);
-          padding: 30px;
-          border-radius: 24px;
-          border: 1px solid rgba(255,255,255,0.15);
-          backdrop-filter: blur(6px);
+          background: transparent !important;
+          padding: 20px !important;
+          border-radius: 0 !important;
+          border: none !important;
+          backdrop-filter: none !important;
+          box-shadow: none !important;
         }
 
-        .card h3 {
-          font-family: 'Oswald', Arial, sans-serif;
-          color: #00cfff;
-          font-size: 29px;
-        }
-
+        .card h3,
         .card p {
-          font-size: 20px;
-          line-height: 32px;
+          text-shadow: 0px 3px 10px rgba(0,0,0,0.95);
         }
 
         .contact-box {
