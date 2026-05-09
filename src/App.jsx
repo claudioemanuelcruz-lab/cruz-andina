@@ -245,6 +245,34 @@ export default function App() {
         }
 
         @media (max-width: 768px) {
+         .navbar {
+          height: 70px !important;
+          min-height: 70px !important;
+          padding: 8px 14px !important;
+          display: flex !important;
+          flex-direction: row !important;
+          overflow: hidden !important;
+         }
+
+        .navbar .logo {
+         width: 58px !important;
+         height: 58px !important;
+         max-width: 58px !important;
+         max-height: 58px !important;
+         object-fit: contain !important;
+         display: block !important;
+         border-radius: 50% !important;
+         }
+
+        .nav-links a:not(.whatsapp-top) {
+         display: none !important;
+         }
+
+        .whatsapp-top {
+         width: auto !important;
+         padding: 10px 16px !important;
+         font-size: 15px !important;
+          }
           .navbar {
             position: relative;
             min-height: auto;
