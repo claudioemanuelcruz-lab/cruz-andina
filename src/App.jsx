@@ -298,20 +298,21 @@ export default function App() {
           }
 
           .page {
-            padding: 95px 18px 70px;
+            padding: 180px 18px 70px;
             text-align: center;
             align-items: flex-start;
             min-height: 100vh;
           }
 
           .title {
-            font-size: 52px;
+            font-size: 42px;
             line-height: 56px;
             letter-spacing: 2px;
           }
 
           .subtitle {
-            font-size: 30px;
+            font-size: 26px;
+            line-height: 40px;
           }
 
           .description {
