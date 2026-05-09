@@ -329,6 +329,10 @@ const historyCard = {
   backdropFilter: "blur(6px)",
 };
 
+const historyImageBox = {
+  width: "100%",
+};
+
 const historyImage = {
   width: "100%",
   height: "430px",
@@ -473,4 +477,4 @@ const whatsappFloat = {
   fontWeight: "900",
   textDecoration: "none",
   zIndex: 1001,
-};
+};g
