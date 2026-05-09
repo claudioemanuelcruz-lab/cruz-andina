@@ -271,8 +271,25 @@ export default function App() {
             height: 58px;
           }
 
+          .nav-links {
+            display: flex !important;
+            flex-wrap: wrap !important;
+            justify-content: center !important;
+            gap: 8px !important;
+            width: 100% !important;
+          }
+
           .nav-links button {
-            display: none;
+            display: inline-block !important;
+            font-size: 13px !important;
+            padding: 6px 8px !important;
+          }
+
+          .navbar {
+            height: auto !important;
+            min-height: 95px !important;
+            flex-direction: column !important;
+            padding: 8px 10px !important;
           }
 
           .whatsapp-top {
