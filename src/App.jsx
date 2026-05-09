@@ -44,9 +44,11 @@ export default function App() {
 
         .logo {
           height: 72px;
-          max-width: 150px;
+          width: auto;
           object-fit: contain;
-        }
+          border-radius: 12px;
+        
+         }
 
         .nav-links {
           display: flex;
@@ -409,9 +411,7 @@ export default function App() {
 
       <main className="main">
         <nav className="navbar">
-          <div className="logo">
-  Cruz Andina
-</div>
+          <img src="/logo.png" alt="Cruz Andina" className="logo" />
           <div className="nav-links">
             <a href="#inicio">Inicio</a>
             <a href="#historia">Historia</a>
