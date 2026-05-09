@@ -10,7 +10,12 @@ export default function App() {
           <a style={navLink} href="#porque">Por qué elegirnos</a>
           <a style={navLink} href="#servicios">Servicios</a>
           <a style={navLink} href="#contacto">Contacto</a>
-          <a style={whatsappTop} href="https://wa.me/543874441133" target="_blank">
+          <a
+            style={whatsappTop}
+            href="https://wa.me/543874441133"
+            target="_blank"
+            rel="noreferrer"
+          >
             WhatsApp
           </a>
         </div>
@@ -22,12 +27,17 @@ export default function App() {
           <h2 style={subtitle}>Conexión minera</h2>
 
           <p style={description}>
-            Vehículos 4x4 para minería, logística operativa,
-            transporte de personal y guía escolta en la puna salteña.
+            Vehículos 4x4 para minería, logística operativa, transporte de
+            personal y guía escolta en la puna salteña.
           </p>
 
           <div style={buttons}>
-            <a style={primaryButton} href="https://wa.me/543874441133" target="_blank">
+            <a
+              style={primaryButton}
+              href="https://wa.me/543874441133"
+              target="_blank"
+              rel="noreferrer"
+            >
               Contactar
             </a>
 
@@ -43,21 +53,25 @@ export default function App() {
 
         <div style={historyCard}>
           <div style={historyImageBox}>
-            <img src="/dueno.jpg" alt="Dueño de Cruz Andina" style={historyImage} />
+            <img
+              src="/dueno.jpg"
+              alt="Familia fundadora de Cruz Andina"
+              style={historyImage}
+            />
           </div>
 
           <div style={historyTextBox}>
             <h3 style={historyTitle}>Raíces puneñas, visión minera</h3>
 
             <p style={historyText}>
-              Cruz Andina nace en el corazón de San Antonio de los Cobres,
-              dentro de una familia humilde de la puna salteña, formada con
-              esfuerzo, sacrificio y sueños de crecimiento.
+              Cruz Andina nace en el corazón de San Antonio de los Cobres, dentro
+              de una familia humilde de la puna salteña, formada con esfuerzo,
+              sacrificio y sueños de crecimiento.
             </p>
 
             <p style={historyText}>
-              Lo que comenzó como una visión familiar impulsada por el trabajo
-              y la necesidad de salir adelante, hoy se transforma en una empresa
+              Lo que comenzó como una visión familiar impulsada por el trabajo y
+              la necesidad de salir adelante, hoy se transforma en una empresa
               comprometida con la minería, el sustento familiar y la excelencia
               operacional.
             </p>
@@ -130,7 +144,7 @@ export default function App() {
 
         <div style={grid}>
           <div style={card}>
-            <h3 style={cardTitle}>Logística de cargas ligeras</h3>
+            <h3 style={cardTitle}>Logística de cargas livianas</h3>
             <p style={cardText}>
               Traslado de cargas y apoyo operativo para proyectos mineros.
             </p>
@@ -173,6 +187,7 @@ export default function App() {
         style={whatsappFloat}
         href="https://wa.me/543874441133?text=Hola,%20quiero%20información%20sobre%20los%20servicios%20de%20Cruz%20Andina."
         target="_blank"
+        rel="noreferrer"
       >
         WhatsApp
       </a>
@@ -184,7 +199,7 @@ const main = {
   minHeight: "100vh",
   background: "#050505",
   color: "white",
-  fontFamily: "Arial",
+  fontFamily: "Arial, sans-serif",
 };
 
 const navbar = {
@@ -193,12 +208,13 @@ const navbar = {
   left: 0,
   right: 0,
   height: "70px",
-  padding: "0 40px",
+  padding: "0 30px",
   display: "flex",
   alignItems: "center",
   justifyContent: "space-between",
-  background: "rgba(0,0,0,0.35)",
+  background: "rgba(0,0,0,0.45)",
   backdropFilter: "blur(10px)",
+  WebkitBackdropFilter: "blur(10px)",
   borderBottom: "1px solid rgba(255,255,255,0.12)",
   zIndex: 1000,
 };
@@ -211,21 +227,23 @@ const brand = {
 
 const navLinks = {
   display: "flex",
-  gap: "22px",
+  gap: "20px",
   alignItems: "center",
+  flexWrap: "wrap",
 };
 
 const navLink = {
   color: "white",
   textDecoration: "none",
   fontWeight: "bold",
+  fontSize: "15px",
 };
 
 const whatsappTop = {
   background: "#25D366",
   color: "#000",
   textDecoration: "none",
-  padding: "12px 18px",
+  padding: "10px 16px",
   borderRadius: "12px",
   fontWeight: "900",
 };
@@ -233,20 +251,20 @@ const whatsappTop = {
 const hero = {
   minHeight: "100vh",
   backgroundImage:
-    "linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.25)), url('/fondo.jpg')",
+    "linear-gradient(rgba(0,0,0,.10), rgba(0,0,0,.35)), url('/fondo.jpg')",
   backgroundSize: "cover",
   backgroundPosition: "center",
   backgroundRepeat: "no-repeat",
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  padding: "100px 40px 40px",
+  padding: "110px 40px 40px",
 };
 
 const heroContent = {
-  maxWidth: "900px",
+  maxWidth: "950px",
   width: "100%",
-  padding: "50px",
+  padding: "40px",
   textAlign: "center",
 };
 
@@ -293,13 +311,14 @@ const primaryButton = {
   fontWeight: "bold",
   fontSize: "18px",
   textDecoration: "none",
+  boxShadow: "0px 0px 20px rgba(0,207,255,0.5)",
 };
 
 const secondaryButton = {
   padding: "18px 42px",
   borderRadius: "14px",
   border: "2px solid #00cfff",
-  background: "rgba(0,0,0,0.10)",
+  background: "rgba(0,0,0,0.15)",
   color: "#00cfff",
   fontWeight: "bold",
   fontSize: "18px",
@@ -307,7 +326,7 @@ const secondaryButton = {
 };
 
 const history = {
-  padding: "100px 40px",
+  padding: "110px 40px",
   backgroundImage:
     "linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.82)), url('/fondo.jpg')",
   backgroundSize: "cover",
@@ -322,11 +341,13 @@ const historyCard = {
   gridTemplateColumns: "360px 1fr",
   gap: "40px",
   alignItems: "center",
-  background: "rgba(0,0,0,0.25)",
+  background: "rgba(0,0,0,0.30)",
   padding: "40px",
   borderRadius: "30px",
   border: "1px solid rgba(255,255,255,0.15)",
   backdropFilter: "blur(6px)",
+  WebkitBackdropFilter: "blur(6px)",
+  boxShadow: "0px 8px 32px rgba(0,0,0,0.35)",
 };
 
 const historyImageBox = {
@@ -366,7 +387,7 @@ const historyStrong = {
 };
 
 const whySection = {
-  padding: "100px 40px",
+  padding: "110px 40px",
   backgroundImage:
     "linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.80)), url('/fondo.jpg')",
   backgroundSize: "cover",
@@ -375,6 +396,8 @@ const whySection = {
 };
 
 const whyGrid = {
+  maxWidth: "1200px",
+  margin: "0 auto",
   display: "grid",
   gridTemplateColumns: "repeat(auto-fit,minmax(260px,1fr))",
   gap: "25px",
@@ -386,6 +409,7 @@ const whyCard = {
   borderRadius: "26px",
   border: "1px solid rgba(255,255,255,0.15)",
   backdropFilter: "blur(6px)",
+  WebkitBackdropFilter: "blur(6px)",
   textAlign: "center",
   boxShadow: "0px 8px 32px rgba(0,0,0,0.35)",
 };
@@ -408,7 +432,7 @@ const whyText = {
 };
 
 const services = {
-  padding: "100px 40px",
+  padding: "110px 40px",
   backgroundImage:
     "linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.75)), url('/fondo.jpg')",
   backgroundSize: "cover",
@@ -421,21 +445,25 @@ const sectionTitle = {
   marginBottom: "50px",
   color: "#00cfff",
   textAlign: "center",
+  textShadow: "0px 0px 20px rgba(0,207,255,0.4)",
 };
 
 const grid = {
+  maxWidth: "1200px",
+  margin: "0 auto",
   display: "grid",
   gridTemplateColumns: "repeat(auto-fit,minmax(260px,1fr))",
   gap: "25px",
 };
 
 const card = {
-  background: "rgba(0,0,0,0.20)",
+  background: "rgba(0,0,0,0.25)",
   padding: "35px",
   borderRadius: "24px",
   border: "1px solid rgba(255,255,255,0.15)",
   color: "white",
   backdropFilter: "blur(4px)",
+  WebkitBackdropFilter: "blur(4px)",
   boxShadow: "0px 8px 32px rgba(0,0,0,0.35)",
 };
 
@@ -452,7 +480,7 @@ const cardText = {
 };
 
 const contact = {
-  padding: "100px 40px",
+  padding: "110px 40px",
   backgroundImage:
     "linear-gradient(rgba(0,0,0,.60), rgba(0,0,0,.85)), url('/fondo.jpg')",
   backgroundSize: "cover",
@@ -464,6 +492,8 @@ const contactBox = {
   fontSize: "24px",
   lineHeight: "55px",
   textAlign: "center",
+  color: "#f1f1f1",
+  textShadow: "0px 2px 10px rgba(0,0,0,1)",
 };
 
 const whatsappFloat = {
@@ -477,4 +507,5 @@ const whatsappFloat = {
   fontWeight: "900",
   textDecoration: "none",
   zIndex: 1001,
-};g
+  boxShadow: "0px 8px 25px rgba(0,0,0,0.4)",
+};
