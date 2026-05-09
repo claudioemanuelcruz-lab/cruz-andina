@@ -7,6 +7,7 @@ export default function App() {
         <div style={navLinks}>
           <a style={navLink} href="#inicio">Inicio</a>
           <a style={navLink} href="#historia">Historia</a>
+          <a style={navLink} href="#porque">Por qué elegirnos</a>
           <a style={navLink} href="#servicios">Servicios</a>
           <a style={navLink} href="#contacto">Contacto</a>
           <a style={whatsappTop} href="https://wa.me/543874441133" target="_blank">
@@ -42,11 +43,7 @@ export default function App() {
 
         <div style={historyCard}>
           <div style={historyImageBox}>
-            <img
-              src="/dueno.jpg"
-              alt="Dueño de Cruz Andina"
-              style={historyImage}
-            />
+            <img src="/dueno.jpg" alt="Dueño de Cruz Andina" style={historyImage} />
           </div>
 
           <div style={historyTextBox}>
@@ -81,6 +78,48 @@ export default function App() {
               Más que un servicio, representamos el esfuerzo de una familia
               puneña que apuesta al crecimiento, al trabajo digno y al futuro de
               nuestra tierra.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="porque" style={whySection}>
+        <h2 style={sectionTitle}>¿Por qué elegir Cruz Andina?</h2>
+
+        <div style={whyGrid}>
+          <div style={whyCard}>
+            <div style={whyIcon}>🏔️</div>
+            <h3 style={whyTitle}>Conocimiento de la puna</h3>
+            <p style={whyText}>
+              Conocemos las rutas, alturas y desafíos reales de operar en San
+              Antonio de los Cobres y la puna salteña.
+            </p>
+          </div>
+
+          <div style={whyCard}>
+            <div style={whyIcon}>🤝</div>
+            <h3 style={whyTitle}>Compromiso familiar</h3>
+            <p style={whyText}>
+              Somos una empresa nacida desde el esfuerzo, el trabajo y la
+              responsabilidad de una familia puneña.
+            </p>
+          </div>
+
+          <div style={whyCard}>
+            <div style={whyIcon}>🛰️</div>
+            <h3 style={whyTitle}>Seguridad operacional</h3>
+            <p style={whyText}>
+              Seguimiento satelital, comunicación radial y acompañamiento
+              operativo para cada servicio.
+            </p>
+          </div>
+
+          <div style={whyCard}>
+            <div style={whyIcon}>⛏️</div>
+            <h3 style={whyTitle}>Crecimiento junto a la minería</h3>
+            <p style={whyText}>
+              Acompañamos el desarrollo minero de la región con compromiso,
+              visión y mejora constante.
             </p>
           </div>
         </div>
@@ -172,7 +211,7 @@ const brand = {
 
 const navLinks = {
   display: "flex",
-  gap: "25px",
+  gap: "22px",
   alignItems: "center",
 };
 
@@ -290,10 +329,6 @@ const historyCard = {
   backdropFilter: "blur(6px)",
 };
 
-const historyImageBox = {
-  width: "100%",
-};
-
 const historyImage = {
   width: "100%",
   height: "430px",
@@ -324,6 +359,48 @@ const historyStrong = {
   color: "#ffffff",
   fontWeight: "bold",
   marginTop: "20px",
+};
+
+const whySection = {
+  padding: "100px 40px",
+  backgroundImage:
+    "linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.80)), url('/fondo.jpg')",
+  backgroundSize: "cover",
+  backgroundPosition: "center",
+  backgroundAttachment: "fixed",
+};
+
+const whyGrid = {
+  display: "grid",
+  gridTemplateColumns: "repeat(auto-fit,minmax(260px,1fr))",
+  gap: "25px",
+};
+
+const whyCard = {
+  background: "rgba(0,0,0,0.25)",
+  padding: "40px",
+  borderRadius: "26px",
+  border: "1px solid rgba(255,255,255,0.15)",
+  backdropFilter: "blur(6px)",
+  textAlign: "center",
+  boxShadow: "0px 8px 32px rgba(0,0,0,0.35)",
+};
+
+const whyIcon = {
+  fontSize: "55px",
+  marginBottom: "20px",
+};
+
+const whyTitle = {
+  color: "#00cfff",
+  fontSize: "28px",
+  marginBottom: "20px",
+};
+
+const whyText = {
+  color: "#f1f1f1",
+  fontSize: "18px",
+  lineHeight: "32px",
 };
 
 const services = {
