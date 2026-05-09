@@ -1,442 +1,508 @@
 export default function App() {
   return (
-    <main style={main}>
-      <nav style={navbar}>
-        <div style={logoBox}>
-          <img src="/logo.png" alt="Cruz Andina" style={logo} />
-        </div>
+    <>
+      <style>{`
+        * {
+          box-sizing: border-box;
+        }
 
-        <div style={navLinks}>
-          <a style={navLink} href="#inicio">Inicio</a>
-          <a style={navLink} href="#historia">Historia</a>
-          <a style={navLink} href="#porque">Por qué elegirnos</a>
-          <a style={navLink} href="#servicios">Servicios</a>
-          <a style={navLink} href="#contacto">Contacto</a>
-          <a
-            style={whatsappTop}
-            href="https://wa.me/543874441133"
-            target="_blank"
-            rel="noreferrer"
-          >
-            WhatsApp
-          </a>
-        </div>
-      </nav>
+        html, body, #root {
+          margin: 0;
+          width: 100%;
+          max-width: 100%;
+          overflow-x: hidden;
+          background: #050505;
+        }
 
-      <section id="inicio" style={hero}>
-        <div style={heroContent}>
-          <h1 style={title}>Cruz Andina</h1>
-          <h2 style={subtitle}>Conexión minera</h2>
+        body {
+          font-family: 'Rajdhani', Arial, sans-serif;
+        }
 
-          <p style={description}>
-            Vehículos 4x4 para minería, logística operativa, transporte de
-            personal y guía escolta en la puna salteña.
-          </p>
+        .main {
+          width: 100%;
+          min-height: 100vh;
+          background: #050505;
+          color: white;
+          overflow-x: hidden;
+        }
 
-          <div style={buttons}>
-            <a
-              style={primaryButton}
-              href="https://wa.me/543874441133?text=Hola,%20quiero%20información%20sobre%20los%20servicios%20de%20Cruz%20Andina."
-              target="_blank"
-              rel="noreferrer"
-            >
-              Contactar
+        .navbar {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          min-height: 85px;
+          padding: 10px 35px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          background: rgba(0,0,0,0.65);
+          backdrop-filter: blur(12px);
+          border-bottom: 1px solid rgba(255,255,255,0.12);
+          z-index: 1000;
+        }
+
+        .logo {
+          height: 72px;
+          max-width: 150px;
+          object-fit: contain;
+        }
+
+        .nav-links {
+          display: flex;
+          gap: 22px;
+          align-items: center;
+        }
+
+        .nav-links a {
+          color: white;
+          text-decoration: none;
+          font-weight: 700;
+          font-size: 18px;
+        }
+
+        .whatsapp-top,
+        .whatsapp-float {
+          background: #25D366;
+          color: #000 !important;
+          text-decoration: none;
+          padding: 12px 20px;
+          border-radius: 12px;
+          font-weight: 900;
+          font-size: 19px;
+        }
+
+        .hero {
+          width: 100%;
+          min-height: 100vh;
+          background-image: linear-gradient(rgba(0,0,0,.15), rgba(0,0,0,.45)), url('/fondo.jpg');
+          background-size: cover;
+          background-position: center;
+          display: flex;
+          align-items: center;
+          padding: 120px 50px 50px;
+        }
+
+        .hero-content {
+          width: 100%;
+          max-width: 760px;
+        }
+
+        .title {
+          font-family: 'Oswald', Arial, sans-serif;
+          font-size: 92px;
+          text-transform: uppercase;
+          letter-spacing: 4px;
+          margin: 0;
+          color: white;
+          line-height: 95px;
+          text-shadow: 0px 5px 25px rgba(0,0,0,0.95);
+        }
+
+        .subtitle {
+          font-family: 'Oswald', Arial, sans-serif;
+          font-size: 46px;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          color: #00cfff;
+          margin: 10px 0 30px;
+          text-shadow: 0px 4px 18px rgba(0,0,0,0.9);
+        }
+
+        .description {
+          font-size: 26px;
+          line-height: 40px;
+          color: #f5f5f5;
+          text-shadow: 0px 3px 12px rgba(0,0,0,1);
+        }
+
+        .buttons {
+          margin-top: 35px;
+          display: flex;
+          gap: 18px;
+          flex-wrap: wrap;
+        }
+
+        .primary-button,
+        .secondary-button {
+          padding: 16px 34px;
+          border-radius: 12px;
+          font-weight: 900;
+          font-size: 20px;
+          text-decoration: none;
+        }
+
+        .primary-button {
+          background: #00cfff;
+          color: #000;
+        }
+
+        .secondary-button {
+          border: 2px solid #00cfff;
+          background: rgba(0,0,0,0.20);
+          color: #00cfff;
+        }
+
+        section {
+          width: 100%;
+          padding: 110px 40px;
+          background-image: linear-gradient(rgba(0,0,0,.60), rgba(0,0,0,.85)), url('/fondo.jpg');
+          background-size: cover;
+          background-position: center;
+        }
+
+        .section-title {
+          font-family: 'Oswald', Arial, sans-serif;
+          font-size: 52px;
+          letter-spacing: 2px;
+          color: #00cfff;
+          text-align: center;
+          margin-bottom: 50px;
+          text-transform: uppercase;
+        }
+
+        .history-card {
+          max-width: 1200px;
+          margin: 0 auto;
+          display: grid;
+          grid-template-columns: 360px 1fr;
+          gap: 40px;
+          align-items: center;
+          background: rgba(0,0,0,0.32);
+          padding: 40px;
+          border-radius: 30px;
+          border: 1px solid rgba(255,255,255,0.15);
+          backdrop-filter: blur(6px);
+        }
+
+        .history-image {
+          width: 100%;
+          height: 430px;
+          object-fit: cover;
+          border-radius: 24px;
+          display: block;
+        }
+
+        .history-title {
+          font-family: 'Oswald', Arial, sans-serif;
+          font-size: 36px;
+          color: #00cfff;
+        }
+
+        .history-text {
+          font-size: 21px;
+          line-height: 34px;
+          color: #f1f1f1;
+        }
+
+        .history-strong {
+          font-size: 23px;
+          line-height: 36px;
+          font-weight: 900;
+        }
+
+        .grid {
+          max-width: 1200px;
+          margin: 0 auto;
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+          gap: 25px;
+        }
+
+        .card {
+          background: rgba(0,0,0,0.28);
+          padding: 35px;
+          border-radius: 24px;
+          border: 1px solid rgba(255,255,255,0.15);
+          backdrop-filter: blur(5px);
+        }
+
+        .card h3 {
+          font-family: 'Oswald', Arial, sans-serif;
+          color: #00cfff;
+          font-size: 29px;
+        }
+
+        .card p {
+          font-size: 20px;
+          line-height: 32px;
+        }
+
+        .contact-box {
+          font-size: 26px;
+          line-height: 55px;
+          text-align: center;
+        }
+
+        .whatsapp-float {
+          position: fixed;
+          right: 25px;
+          bottom: 25px;
+          border-radius: 999px;
+          z-index: 1001;
+        }
+
+        @media (max-width: 768px) {
+          .navbar {
+            position: relative;
+            min-height: auto;
+            padding: 12px 14px;
+            flex-direction: column;
+            gap: 12px;
+          }
+
+          .logo {
+            height: 58px;
+          }
+
+          .nav-links {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+          }
+
+          .nav-links a {
+            font-size: 15px;
+          }
+
+          .whatsapp-top {
+            width: 100%;
+            text-align: center;
+            font-size: 16px;
+          }
+
+          .hero {
+            min-height: auto;
+            padding: 60px 20px 70px;
+            text-align: center;
+            background-position: center;
+          }
+
+          .title {
+            font-size: 54px;
+            line-height: 58px;
+            letter-spacing: 2px;
+          }
+
+          .subtitle {
+            font-size: 30px;
+          }
+
+          .description {
+            font-size: 20px;
+            line-height: 32px;
+          }
+
+          .buttons {
+            justify-content: center;
+          }
+
+          .primary-button,
+          .secondary-button {
+            width: 100%;
+            text-align: center;
+            font-size: 18px;
+          }
+
+          section {
+            padding: 70px 18px;
+          }
+
+          .section-title {
+            font-size: 34px;
+          }
+
+          .history-card {
+            display: flex;
+            flex-direction: column;
+            padding: 22px;
+            gap: 25px;
+            text-align: center;
+          }
+
+          .history-image {
+            height: auto;
+            max-height: 380px;
+          }
+
+          .history-title {
+            font-size: 30px;
+          }
+
+          .history-text,
+          .history-strong {
+            font-size: 18px;
+            line-height: 30px;
+          }
+
+          .grid {
+            grid-template-columns: 1fr;
+          }
+
+          .contact-box {
+            font-size: 20px;
+            line-height: 38px;
+          }
+
+          .whatsapp-float {
+            right: 16px;
+            bottom: 16px;
+            font-size: 15px;
+          }
+        }
+          @media (max-width: 768px) {
+  .navbar {
+    position: relative !important;
+    width: 100% !important;
+    padding: 12px 16px !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+  }
+
+  .logo {
+    width: auto !important;
+    height: auto !important;
+    font-size: 24px !important;
+    border: none !important;
+    color: #00cfff !important;
+    font-weight: 900 !important;
+  }
+
+  .nav-links a:not(.whatsapp-top) {
+    display: none !important;
+  }
+
+  .nav-links {
+    width: auto !important;
+    display: flex !important;
+  }
+
+  .whatsapp-top {
+    width: auto !important;
+    padding: 10px 16px !important;
+    font-size: 15px !important;
+    border-radius: 12px !important;
+  }
+
+  .hero {
+    padding-top: 40px !important;
+  }
+
+  .title {
+    font-size: 48px !important;
+    line-height: 52px !important;
+  }
+
+  .subtitle {
+    font-size: 30px !important;
+  }
+
+  .description {
+    font-size: 18px !important;
+    line-height: 30px !important;
+  }
+}
+      `}</style>
+
+      <main className="main">
+        <nav className="navbar">
+          <div className="logo">
+  Cruz Andina
+</div>
+          <div className="nav-links">
+            <a href="#inicio">Inicio</a>
+            <a href="#historia">Historia</a>
+            <a href="#porque">Por qué elegirnos</a>
+            <a href="#servicios">Servicios</a>
+            <a href="#contacto">Contacto</a>
+            <a className="whatsapp-top" href="https://wa.me/543874441133" target="_blank" rel="noreferrer">
+              WhatsApp
             </a>
-
-            <a style={secondaryButton} href="#servicios">
-              Ver servicios
-            </a>
           </div>
-        </div>
-      </section>
+        </nav>
 
-      <section id="historia" style={history}>
-        <h2 style={sectionTitle}>Nuestra Historia</h2>
+        <section id="inicio" className="hero">
+          <div className="hero-content">
+            <h1 className="title">Cruz Andina</h1>
+            <h2 className="subtitle">Conexión minera</h2>
+            <p className="description">
+              Vehículos 4x4 para minería, logística operativa, transporte de personal y guía escolta en la puna salteña.
+            </p>
 
-        <div style={historyCard}>
-          <div style={historyImageBox}>
-            <img
-              src="/dueno.jpg"
-              alt="Familia fundadora de Cruz Andina"
-              style={historyImage}
-            />
+            <div className="buttons">
+              <a className="primary-button" href="https://wa.me/543874441133?text=Hola,%20quiero%20información%20sobre%20los%20servicios%20de%20Cruz%20Andina." target="_blank" rel="noreferrer">
+                Contactar
+              </a>
+              <a className="secondary-button" href="#servicios">
+                Ver servicios
+              </a>
+            </div>
           </div>
+        </section>
 
-          <div>
-            <h3 style={historyTitle}>Raíces puneñas, visión minera</h3>
+        <section id="historia">
+          <h2 className="section-title">Nuestra Historia</h2>
 
-            <p style={historyText}>
-              Cruz Andina nace en el corazón de San Antonio de los Cobres,
-              dentro de una familia humilde de la puna salteña, formada con
-              esfuerzo, sacrificio y sueños de crecimiento.
-            </p>
+          <div className="history-card">
+            <img src="/dueno.jpg" alt="Familia fundadora de Cruz Andina" className="history-image" />
 
-            <p style={historyText}>
-              Lo que comenzó como una visión familiar impulsada por el trabajo y
-              la necesidad de salir adelante, hoy se transforma en una empresa
-              comprometida con la minería, el sustento familiar y la excelencia
-              operacional.
-            </p>
-
-            <p style={historyText}>
-              Conocemos cada ruta, cada altura y cada desafío de trabajar en la
-              puna, porque somos parte de ella.
-            </p>
-
-            <p style={historyStrong}>
-              Más que un servicio, representamos el esfuerzo de una familia
-              puneña que apuesta al crecimiento, al trabajo digno y al futuro de
-              nuestra tierra.
-            </p>
+            <div>
+              <h3 className="history-title">Raíces puneñas, visión minera</h3>
+              <p className="history-text">
+                Cruz Andina nace en el corazón de San Antonio de los Cobres, dentro de una familia humilde de la puna salteña, formada con esfuerzo, sacrificio y sueños de crecimiento.
+              </p>
+              <p className="history-text">
+                Lo que comenzó como una visión familiar impulsada por el trabajo y la necesidad de salir adelante, hoy se transforma en una empresa comprometida con la minería, el sustento familiar y la excelencia operacional.
+              </p>
+              <p className="history-text">
+                Conocemos cada ruta, cada altura y cada desafío de trabajar en la puna, porque somos parte de ella.
+              </p>
+              <p className="history-strong">
+                Más que un servicio, representamos el esfuerzo de una familia puneña que apuesta al crecimiento, al trabajo digno y al futuro de nuestra tierra.
+              </p>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section id="porque" style={whySection}>
-        <h2 style={sectionTitle}>¿Por qué elegir Cruz Andina?</h2>
+        <section id="porque">
+          <h2 className="section-title">¿Por qué elegir Cruz Andina?</h2>
 
-        <div style={grid}>
-          <div style={card}>
-            <h3 style={cardTitle}>Conocimiento de la puna</h3>
-            <p style={cardText}>
-              Conocemos las rutas, alturas y desafíos reales de operar en San
-              Antonio de los Cobres y la puna salteña.
-            </p>
+          <div className="grid">
+            <div className="card"><h3>Conocimiento de la puna</h3><p>Conocemos las rutas, alturas y desafíos reales de operar en San Antonio de los Cobres y la puna salteña.</p></div>
+            <div className="card"><h3>Compromiso familiar</h3><p>Somos una empresa nacida desde el esfuerzo, el trabajo y la responsabilidad de una familia puneña.</p></div>
+            <div className="card"><h3>Seguridad operacional</h3><p>Seguimiento satelital, comunicación radial y acompañamiento operativo para cada servicio.</p></div>
+            <div className="card"><h3>Crecimiento minero</h3><p>Acompañamos el desarrollo minero de la región con compromiso, visión y mejora constante.</p></div>
           </div>
+        </section>
 
-          <div style={card}>
-            <h3 style={cardTitle}>Compromiso familiar</h3>
-            <p style={cardText}>
-              Somos una empresa nacida desde el esfuerzo, el trabajo y la
-              responsabilidad de una familia puneña.
-            </p>
+        <section id="servicios">
+          <h2 className="section-title">Nuestros Servicios</h2>
+
+          <div className="grid">
+            <div className="card"><h3>Logística de cargas livianas</h3><p>Traslado de cargas y apoyo operativo para proyectos mineros.</p></div>
+            <div className="card"><h3>Transporte de personal</h3><p>Seguimiento satelital, Starlink y comunicación radial UHF/VHF.</p></div>
+            <div className="card"><h3>Guía escolta</h3><p>Seguridad y acompañamiento operativo en rutas complejas.</p></div>
+            <div className="card"><h3>Alquiler 4x4</h3><p>Nissan XE equipado para minería y operaciones de altura.</p></div>
           </div>
+        </section>
 
-          <div style={card}>
-            <h3 style={cardTitle}>Seguridad operacional</h3>
-            <p style={cardText}>
-              Seguimiento satelital, comunicación radial y acompañamiento
-              operativo para cada servicio.
-            </p>
+        <section id="contacto">
+          <h2 className="section-title">Contacto</h2>
+
+          <div className="contact-box">
+            <p>📞 3874441133 - 3875753306</p>
+            <p>✉️ lcruzandina@gmail.com</p>
+            <p>📍 San Antonio de los Cobres - Salta</p>
           </div>
+        </section>
 
-          <div style={card}>
-            <h3 style={cardTitle}>Crecimiento minero</h3>
-            <p style={cardText}>
-              Acompañamos el desarrollo minero de la región con compromiso,
-              visión y mejora constante.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section id="servicios" style={services}>
-        <h2 style={sectionTitle}>Nuestros Servicios</h2>
-
-        <div style={grid}>
-          <div style={card}>
-            <h3 style={cardTitle}>Logística de cargas livianas</h3>
-            <p style={cardText}>
-              Traslado de cargas y apoyo operativo para proyectos mineros.
-            </p>
-          </div>
-
-          <div style={card}>
-            <h3 style={cardTitle}>Transporte de personal</h3>
-            <p style={cardText}>
-              Seguimiento satelital, Starlink y comunicación radial UHF/VHF.
-            </p>
-          </div>
-
-          <div style={card}>
-            <h3 style={cardTitle}>Guía escolta</h3>
-            <p style={cardText}>
-              Seguridad y acompañamiento operativo en rutas complejas.
-            </p>
-          </div>
-
-          <div style={card}>
-            <h3 style={cardTitle}>Alquiler 4x4</h3>
-            <p style={cardText}>
-              Nissan XE equipado para minería y operaciones de altura.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section id="contacto" style={contact}>
-        <h2 style={sectionTitle}>Contacto</h2>
-
-        <div style={contactBox}>
-          <p>📞 3874441133 - 3875753306</p>
-          <p>✉️ lcruzandina@gmail.com</p>
-          <p>📍 San Antonio de los Cobres - Salta</p>
-        </div>
-      </section>
-
-      <a
-        style={whatsappFloat}
-        href="https://wa.me/543874441133?text=Hola,%20quiero%20información%20sobre%20los%20servicios%20de%20Cruz%20Andina."
-        target="_blank"
-        rel="noreferrer"
-      >
-        WhatsApp
-      </a>
-    </main>
+        <a className="whatsapp-float" href="https://wa.me/543874441133?text=Hola,%20quiero%20información%20sobre%20los%20servicios%20de%20Cruz%20Andina." target="_blank" rel="noreferrer">
+          WhatsApp
+        </a>
+      </main>
+    </>
   );
 }
-
-const main = {
-  minHeight: "100vh",
-  background: "#050505",
-  color: "white",
-  fontFamily: "'Rajdhani', sans-serif",
-};
-
-const navbar = {
-  position: "fixed",
-  top: 0,
-  left: 0,
-  right: 0,
-  height: "85px",
-  padding: "0 35px",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "space-between",
-  background: "rgba(0,0,0,0.55)",
-  backdropFilter: "blur(12px)",
-  borderBottom: "1px solid rgba(255,255,255,0.12)",
-  zIndex: 1000,
-};
-
-const logoBox = {
-  display: "flex",
-  alignItems: "center",
-};
-
-const logo = {
-  height: "78px",
-  objectFit: "contain",
-};
-
-const navLinks = {
-  display: "flex",
-  gap: "22px",
-  alignItems: "center",
-};
-
-const navLink = {
-  color: "white",
-  textDecoration: "none",
-  fontWeight: "700",
-  fontSize: "18px",
-};
-
-const whatsappTop = {
-  background: "#25D366",
-  color: "#000",
-  textDecoration: "none",
-  padding: "12px 20px",
-  borderRadius: "12px",
-  fontWeight: "900",
-  fontSize: "19px",
-};
-
-const hero = {
-  minHeight: "100vh",
-  backgroundImage:
-    "linear-gradient(rgba(0,0,0,.15), rgba(0,0,0,.45)), url('/fondo.jpg')",
-  backgroundSize: "cover",
-  backgroundPosition: "center",
-  display: "flex",
-  alignItems: "center",
-  padding: "120px 50px 50px",
-};
-
-const heroContent = {
-  maxWidth: "760px",
-};
-
-const title = {
-  fontFamily: "'Oswald', sans-serif",
-  fontSize: "92px",
-  textTransform: "uppercase",
-  letterSpacing: "4px",
-  margin: 0,
-  color: "white",
-  lineHeight: "95px",
-  textShadow: "0px 5px 25px rgba(0,0,0,0.95)",
-};
-
-const subtitle = {
-  fontFamily: "'Oswald', sans-serif",
-  fontSize: "46px",
-  textTransform: "uppercase",
-  letterSpacing: "2px",
-  color: "#00cfff",
-  margin: "10px 0 30px",
-  textShadow: "0px 4px 18px rgba(0,0,0,0.9)",
-};
-
-const description = {
-  fontSize: "26px",
-  lineHeight: "40px",
-  color: "#f5f5f5",
-  textShadow: "0px 3px 12px rgba(0,0,0,1)",
-};
-
-const buttons = {
-  marginTop: "35px",
-  display: "flex",
-  gap: "18px",
-  flexWrap: "wrap",
-};
-
-const primaryButton = {
-  padding: "16px 34px",
-  borderRadius: "12px",
-  background: "#00cfff",
-  color: "#000",
-  fontWeight: "900",
-  fontSize: "20px",
-  textDecoration: "none",
-};
-
-const secondaryButton = {
-  padding: "16px 34px",
-  borderRadius: "12px",
-  border: "2px solid #00cfff",
-  background: "rgba(0,0,0,0.20)",
-  color: "#00cfff",
-  fontWeight: "900",
-  fontSize: "20px",
-  textDecoration: "none",
-};
-
-const history = {
-  padding: "110px 40px",
-  backgroundImage:
-    "linear-gradient(rgba(0,0,0,.60), rgba(0,0,0,.85)), url('/fondo.jpg')",
-  backgroundSize: "cover",
-  backgroundPosition: "center",
-  backgroundAttachment: "fixed",
-};
-
-const historyCard = {
-  maxWidth: "1200px",
-  margin: "0 auto",
-  display: "grid",
-  gridTemplateColumns: "360px 1fr",
-  gap: "40px",
-  alignItems: "center",
-  background: "rgba(0,0,0,0.32)",
-  padding: "40px",
-  borderRadius: "30px",
-  border: "1px solid rgba(255,255,255,0.15)",
-  backdropFilter: "blur(6px)",
-};
-
-const historyImageBox = {
-  width: "100%",
-};
-
-const historyImage = {
-  width: "100%",
-  height: "430px",
-  objectFit: "cover",
-  borderRadius: "24px",
-};
-
-const historyTitle = {
-  fontFamily: "'Oswald', sans-serif",
-  fontSize: "36px",
-  color: "#00cfff",
-};
-
-const historyText = {
-  fontSize: "21px",
-  lineHeight: "34px",
-  color: "#f1f1f1",
-};
-
-const historyStrong = {
-  fontSize: "23px",
-  lineHeight: "36px",
-  fontWeight: "900",
-};
-
-const whySection = {
-  padding: "110px 40px",
-  backgroundImage:
-    "linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.82)), url('/fondo.jpg')",
-  backgroundSize: "cover",
-  backgroundPosition: "center",
-  backgroundAttachment: "fixed",
-};
-
-const services = whySection;
-
-const contact = {
-  padding: "110px 40px",
-  backgroundImage:
-    "linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.90)), url('/fondo.jpg')",
-  backgroundSize: "cover",
-  backgroundPosition: "center",
-  backgroundAttachment: "fixed",
-};
-
-const sectionTitle = {
-  fontFamily: "'Oswald', sans-serif",
-  fontSize: "52px",
-  letterSpacing: "2px",
-  color: "#00cfff",
-  textAlign: "center",
-  marginBottom: "50px",
-  textTransform: "uppercase",
-};
-
-const grid = {
-  maxWidth: "1200px",
-  margin: "0 auto",
-  display: "grid",
-  gridTemplateColumns: "repeat(auto-fit,minmax(260px,1fr))",
-  gap: "25px",
-};
-
-const card = {
-  background: "rgba(0,0,0,0.28)",
-  padding: "35px",
-  borderRadius: "24px",
-  border: "1px solid rgba(255,255,255,0.15)",
-  backdropFilter: "blur(5px)",
-};
-
-const cardTitle = {
-  fontFamily: "'Oswald', sans-serif",
-  color: "#00cfff",
-  fontSize: "29px",
-};
-
-const cardText = {
-  fontSize: "20px",
-  lineHeight: "32px",
-};
-
-const contactBox = {
-  fontSize: "26px",
-  lineHeight: "55px",
-  textAlign: "center",
-};
-
-const whatsappFloat = {
-  position: "fixed",
-  right: "25px",
-  bottom: "25px",
-  background: "#25D366",
-  color: "#000",
-  padding: "16px 22px",
-  borderRadius: "999px",
-  fontWeight: "900",
-  textDecoration: "none",
-  zIndex: 1001,
-};
